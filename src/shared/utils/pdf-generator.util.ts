@@ -38,7 +38,7 @@ export async function generateCertificate(
 
   // Add title
   page.drawText('OFFICIAL CERTIFICATE', {
-    x: 150,
+    x: 170,
     y: height - 100,
     size: 24,
     color: rgb(0, 0, 0),
@@ -53,8 +53,8 @@ export async function generateCertificate(
 
   // Embed QR code (middle bottom)
   page.drawImage(qrImage, {
-    x: (width - 200) / 2,
-    y: 50,
+    x: (width - 180) / 2,
+    y: 80,
     width: 200,
     height: 200,
   });
@@ -65,7 +65,7 @@ export async function generateCertificate(
 
   // Certificate header
   page.drawText('This certifies that:', {
-    x: 200,
+    x: 150,
     y: height - 180,
     size: fontSize,
     font,
@@ -73,21 +73,21 @@ export async function generateCertificate(
 
   // Student Info
   page.drawText(`Name: ${data.name}`, {
-    x: 200,
+    x: 150,
     y: height - 220,
     size: fontSize,
     font,
   });
 
   page.drawText(`Matriculation Number: ${data.matricNo}`, {
-    x: 200,
+    x: 150,
     y: height - 250,
     size: fontSize,
     font,
   });
 
   page.drawText(`Date of Birth: ${data.dob}`, {
-    x: 200,
+    x: 150,
     y: height - 280,
     size: fontSize,
     font,
@@ -95,21 +95,21 @@ export async function generateCertificate(
 
   // Academic Info
   page.drawText(`Course: ${data.course}`, {
-    x: 200,
+    x: 150,
     y: height - 330,
     size: fontSize,
     font,
   });
 
   page.drawText(`Grade: ${data.grade}`, {
-    x: 200,
+    x: 150,
     y: height - 360,
     size: fontSize,
     font,
   });
 
   page.drawText(`Graduation Year: ${data.graduationYear}`, {
-    x: 200,
+    x: 150,
     y: height - 390,
     size: fontSize,
     font,
@@ -117,14 +117,14 @@ export async function generateCertificate(
 
   // Dates
   page.drawText(`Issued On: ${format(data.issueDate, 'MMMM do, yyyy')}`, {
-    x: 200,
+    x: 150,
     y: height - 450,
     size: fontSize,
     font,
   });
 
   page.drawText(`Valid Until: ${format(data.expiryDate, 'MMMM do, yyyy')}`, {
-    x: 200,
+    x: 150,
     y: height - 480,
     size: fontSize,
     font,

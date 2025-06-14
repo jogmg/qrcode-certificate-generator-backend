@@ -53,7 +53,7 @@ export class CertificateService {
     return {
       pdfBuffer,
       token,
-      fileName: `certificate_${token}.pdf`,
+      fileName: `certificate_${token.slice(-3)}.pdf`,
     };
   }
 

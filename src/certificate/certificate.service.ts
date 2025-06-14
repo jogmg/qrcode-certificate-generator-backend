@@ -44,7 +44,7 @@ export class CertificateService {
       expiryDate,
     });
 
-    const verificationUrl = `${process.env.BASE_URL}/verify`;
+    const verificationUrl = `${process.env.FRONTEND_URL}/verify`;
     const pdfBuffer = await generateCertificate(
       certificateData,
       verificationUrl,

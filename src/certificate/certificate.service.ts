@@ -74,9 +74,11 @@ export class CertificateService {
 
     return {
       valid: true,
-      ...decryptedData,
-      issueDate: certificate.createdAt?.toISOString(),
-      expiryDate: certificate.expiryDate.toISOString(),
+      certificate: {
+        ...decryptedData,
+        issueDate: certificate.createdAt?.toISOString(),
+        expiryDate: certificate.expiryDate.toISOString(),
+      },
     };
   }
 }

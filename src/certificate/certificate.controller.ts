@@ -8,7 +8,6 @@ import {
   Res,
 } from '@nestjs/common';
 import { Response } from 'express';
-import { ApiResponse } from 'src/shared/utils/api-response.util';
 import { CertificateService } from './certificate.service';
 import { CreateCertificateDto } from './dto/create-certificate.dto';
 import { VerifyCertificateDto } from './dto/verify-certificate.dto';
@@ -32,14 +31,6 @@ export class CertificateController {
 
   @Get('verify')
   async verifyCertificate(@Query() verifyDto: VerifyCertificateDto) {
-    const certificate =
-      await this.certificateService.verifyCertificate(verifyDto);
-
-    return new ApiResponse(
-      false,
-      200,
-      'Certificate verified successfully',
-      certificate,
-    );
+    return await this.certificateService.verifyCertificate(verifyDto);
   }
 }
